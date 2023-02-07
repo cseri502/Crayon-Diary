@@ -36,5 +36,4 @@
 - A manuális témacsere a jobb alsó gombbal érhető el. 🔦🌆
 
 <h2>Ismert hibák</h2>
-- Windows 11 operációs rendszer alatt az ablak maximalizálásának tiltása nem működik.
-  - A maximalizált állapot megjelenési problémákat okoz.
+- Windows 11 operációs rendszer alatt az ablak maximalizálásának tiltása nem működik. A maximalizált állapot megjelenési problémákat okoz.
