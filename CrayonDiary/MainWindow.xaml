@@ -8,12 +8,27 @@
         ui:WindowHelper.UseModernWindowStyle="True"
         mc:Ignorable="d"
         Title="Zsírkréta" 
-        Height="600" Width="1000" 
-        Icon="/crayon.png" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" Topmost="True">
-    
-    <ui:SimpleStackPanel Margin="12" Spacing="24">
+        Height="650" Width="1100" 
+        Icon="/crayon.png" ResizeMode="CanMinimize" 
+        WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" 
+        Topmost="False">
+
+    <ui:SimpleStackPanel Margin="0" Spacing="24">
         <!--<TextBlock Text="Zsírkréta" Style="{StaticResource HeaderTextBlockStyle}" />
-        <Button Content="I am a button" />
         <Button Content="I am an accent button" Style="{StaticResource AccentButtonStyle}" />-->
+        <TabControl>
+            <TabItem Header="Főoldal" Uid="0" IsEnabled="False">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="Jegykezelés" Uid="1" IsEnabled="True">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+        </TabControl>
+        <DataGrid x:Name="MarkGrid" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,0,400,-560"/>
+        <TextBox x:Name="addNewStudentInput" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" Text="Tanuló neve" VerticalAlignment="Top" Width="333" Margin="740,-24,0,0"/>
+        <Button x:Name="addStudentBtn" Content="Tanuló felvétele" Margin="806,-19,0,0" VerticalAlignment="Top" Width="202" Click="addStudentBtn_Click" />
+        <TextBox x:Name="changeStudentClassInput" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" Text="Osztály" VerticalAlignment="Top" Width="333" Margin="740,3,0,0"/>
+        <Button x:Name="addStudentClassBtn" Content="Kijelölt tanulóhoz rendelés" Margin="806,-19,0,0" VerticalAlignment="Top" Width="202" Click="addStudentClassBtn_Click" />
+        <Button x:Name="delStudentBtn" Content="Kijelölt tanuló törlése" Margin="806,-5,0,0" VerticalAlignment="Top" Width="202" Click="delStudentBtn_Click" />
     </ui:SimpleStackPanel>
 </Window>
