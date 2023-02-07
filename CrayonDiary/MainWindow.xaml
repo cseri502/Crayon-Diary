@@ -17,18 +17,36 @@
         <!--<TextBlock Text="Zsírkréta" Style="{StaticResource HeaderTextBlockStyle}" />
         <Button Content="I am an accent button" Style="{StaticResource AccentButtonStyle}" />-->
         <TabControl>
-            <TabItem Header="Főoldal" Uid="0" IsEnabled="False">
+            <TabItem Header="Főoldal" IsEnabled="False" IsSelected="False">
                 <Grid Background="#FFE5E5E5"/>
             </TabItem>
-            <TabItem Header="Jegykezelés" Uid="1" IsEnabled="True">
+            <TabItem Header="Jegykezelés" IsEnabled="True" IsSelected="True">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="Mulasztások" IsEnabled="False" IsSelected="False">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="Órarend" IsEnabled="False" IsSelected="False">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="Információk" IsEnabled="False" IsSelected="False">
                 <Grid Background="#FFE5E5E5"/>
             </TabItem>
         </TabControl>
-        <DataGrid x:Name="MarkGrid" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,0,400,-560"/>
-        <TextBox x:Name="addNewStudentInput" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" Text="Tanuló neve" VerticalAlignment="Top" Width="333" Margin="740,-24,0,0"/>
-        <Button x:Name="addStudentBtn" Content="Tanuló felvétele" Margin="806,-19,0,0" VerticalAlignment="Top" Width="202" Click="addStudentBtn_Click" />
-        <TextBox x:Name="changeStudentClassInput" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" Text="Osztály" VerticalAlignment="Top" Width="333" Margin="740,3,0,0"/>
-        <Button x:Name="addStudentClassBtn" Content="Kijelölt tanulóhoz rendelés" Margin="806,-19,0,0" VerticalAlignment="Top" Width="202" Click="addStudentClassBtn_Click" />
-        <Button x:Name="delStudentBtn" Content="Kijelölt tanuló törlése" Margin="806,-5,0,0" VerticalAlignment="Top" Width="202" Click="delStudentBtn_Click" />
+        <DataGrid x:Name="MarkGrid" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,0,400,-560" Visibility="Hidden"/>
+        <TextBox x:Name="addNewStudentInput" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" Text="Tanuló neve" VerticalAlignment="Top" Width="333" Margin="740,-24,0,0" GotFocus="AddNewStudentInput_GotFocus"/>
+        <Button x:Name="addStudentBtn" Content="Tanuló felvétele" Style="{StaticResource AccentButtonStyle}" Margin="806,-19,0,0" VerticalAlignment="Top" Width="202" Click="AddStudentBtn_Click" />
+        <TextBox x:Name="changeStudentClassInput" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" Text="Osztály" VerticalAlignment="Top" Width="333" Margin="740,3,0,0" GotFocus="ChangeStudentClassInput_GotFocus"/>
+        <Button x:Name="addStudentClassBtn" Content="Kijelölt tanulóhoz rendelés" Style="{StaticResource AccentButtonStyle}" Margin="806,-19,0,0" VerticalAlignment="Top" Width="202" Click="AddStudentClassBtn_Click" />
+        <Button x:Name="delStudentBtn" Content="Kijelölt tanuló törlése" Style="{StaticResource AccentButtonStyle}" Margin="806,-5,0,0" VerticalAlignment="Top" Width="202" Click="DelStudentBtn_Click" />
+        <Button x:Name="changeThemeBtn" Content="Téma módosítása" Style="{StaticResource AccentButtonStyle}" Margin="954,268,10,-270" VerticalAlignment="Stretch" Click="ChangeThemeBtn_Click" HorizontalAlignment="Stretch" />
+        <ComboBox x:Name="subjectsComboBox" Height="32" Margin="0,-55,159,0" HorizontalAlignment="Right" Width="201"/>
+        <TextBox x:Name="markInput" Height="32" PreviewTextInput="NumberValidationTextBox" TextWrapping="Wrap" Text="5" VerticalAlignment="Top" Margin="0,-79,27,0" HorizontalAlignment="Right" Width="119" GotFocus="MarkInput_GotFocus"/>
+        <Button x:Name="setMarkBtn" Content="Jegy rögzítése" Style="{StaticResource AccentButtonStyle}" Margin="806,-66,92,64" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Click="SetMarkBtn_Click" />
+        <Image x:Name="personIndicator" HorizontalAlignment="Left" Height="383" VerticalAlignment="Top" Width="614" Margin="164,-332,0,0" Source="/delete-friend.png"/>
+        <Label x:Name="averageLabel" Content="A kiválasztott tanuló átlaga:" HorizontalAlignment="Left" Height="19" VerticalAlignment="Top" Width="201" Margin="740,-132,0,0"/>
+        <Button x:Name="averageCalcBtn" Content="Átlagszámítás" Style="{StaticResource AccentButtonStyle}" Margin="954,-162,27,161" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Click="AverageCalcBtn_Click" />
+        <Button x:Name="writeDataBtn" Content="Adatok mentése" Style="{StaticResource AccentButtonStyle}" Margin="806,-157,92,155" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Click="WriteDataBtn_Click" />
+        <Button x:Name="readDataBtn" Content="Adatok beolvasása" Style="{StaticResource AccentButtonStyle}" Margin="806,-174,92,172" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Click="ReadDataBtn_Click" />
     </ui:SimpleStackPanel>
 </Window>
